@@ -17,9 +17,9 @@ export default class Player extends React.Component {
 
   render() {
     return (
-      <div> 
+      <div style={{ flex: 1 }}> 
         <div data-vjs-player>
-          <video ref={ node => this.videoNode = node } className="video-js"></video>
+          <video style={{ width: "100%", height: "100%" }} ref={ node => this.videoNode = node } className="video-js"></video>
         </div>
       </div>
     )

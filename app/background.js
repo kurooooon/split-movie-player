@@ -104,25 +104,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const isProd = "development" === 'production';
+const isProd = "development" === "production";
 
 if (isProd) {
   electron_serve__WEBPACK_IMPORTED_MODULE_1___default()({
-    directory: 'app'
+    directory: "app"
   });
 } else {
-  electron__WEBPACK_IMPORTED_MODULE_0__["app"].setPath('userData', `${electron__WEBPACK_IMPORTED_MODULE_0__["app"].getPath('userData')} (development)`);
+  electron__WEBPACK_IMPORTED_MODULE_0__["app"].setPath("userData", `${electron__WEBPACK_IMPORTED_MODULE_0__["app"].getPath("userData")} (development)`);
 }
 
 (async () => {
   await electron__WEBPACK_IMPORTED_MODULE_0__["app"].whenReady();
-  const mainWindow = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["createWindow"])('main', {
+  const mainWindow = Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["createWindow"])("main", {
     width: 1000,
     height: 600
   });
 
   if (isProd) {
-    await mainWindow.loadURL('app://./home.html');
+    await mainWindow.loadURL("app://./home.html");
   } else {
     const port = process.argv[2];
     await mainWindow.loadURL(`http://localhost:${port}/home`);
@@ -130,7 +130,7 @@ if (isProd) {
   }
 })();
 
-electron__WEBPACK_IMPORTED_MODULE_0__["app"].on('window-all-closed', () => {
+electron__WEBPACK_IMPORTED_MODULE_0__["app"].on("window-all-closed", () => {
   electron__WEBPACK_IMPORTED_MODULE_0__["app"].quit();
 });
 
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function createWindow(windowName, options) {
-  const key = 'window-state';
+  const key = "window-state";
   const name = `window-state-${windowName}`;
   const store = new electron_store__WEBPACK_IMPORTED_MODULE_1__({
     name
@@ -220,10 +220,9 @@ function createWindow(windowName, options) {
       ...options.webPreferences
     }
   });
-  win.on('close', saveState);
+  win.on("close", saveState);
   return win;
 }
-;
 
 /***/ }),
 
