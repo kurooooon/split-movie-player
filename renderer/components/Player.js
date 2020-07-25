@@ -1,27 +1,34 @@
-import React from "react"
-import videojs from 'video.js'
+import React, { useRef, useState } from "react";
+import Dropzone from "react-dropzone";
+import { Player as ReactPlayer, ControlBar } from "video-react";
+import styled from "@emotion/styled";
 
-export default class Player extends React.Component {
-  componentDidMount() {
-    // instantiate Video.js
-    this.player = videojs(this.videoNode, this.props.options, function onPlayerReady() {
-      console.log('onPlayerReady', this)
-    });
-  }
+const StyledPlayer = styled(ReactPlayer)`
+  padding-top: 0 !important;
+  height: 100% !important;
+`;
 
-  componentWillUnmount() {
-    if (this.player) {
-      this.player.dispose()
-    }
-  }
-
-  render() {
-    return (
-      <div style={{ flex: 1 }}> 
-        <div data-vjs-player>
-          <video style={{ width: "100%", height: "100%" }} ref={ node => this.videoNode = node } className="video-js"></video>
-        </div>
-      </div>
-    )
-  }
+export default function Player() {
+  let playerRef = useRef(null);
+  const [blobUrl, setBlobUrl] = useState(null);
+  return (
+    <div style={{ flex: 1 }}>
+      <Dropzone
+        onDrop={(acceptedFiles) => {
+          const blobUrl = window.URL.createObjectURL(acceptedFiles[0]);
+          setBlobUrl(blobUrl);
+          playerRef.current.load();
+        }}
+      >
+        {({ getRootProps }) => (
+          <div style={{ height: "100%", display: "flex" }} {...getRootProps()}>
+            <StyledPlayer ref={playerRef} autoPlay>
+              {blobUrl && <source src={blobUrl} />}
+              <ControlBar autoHide={false} />
+            </StyledPlayer>
+          </div>
+        )}
+      </Dropzone>
+    </div>
+  );
 }

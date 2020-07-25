@@ -3,7 +3,9 @@
 logs
 **/*.backup.*
 **/*.back.*
-.next
+renderer/.next/*
+dist
+app
 
 node_modules
 bower_components

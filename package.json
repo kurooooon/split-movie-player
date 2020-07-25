@@ -1,19 +1,23 @@
 {
   "private": false,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "name": "split-movie-player",
+  "description": "split-movie-player",
   "version": "1.0.0",
   "author": "kurooooon <b1006110@gmail.com>",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
-    "build": "nextron build",
+    "build": "CSC_IDENTITY_AUTO_DISCOVERY=false nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "electron-serve": "^1.0.0",
     "electron-store": "^5.2.0",
-    "react-dropzone": "^11.0.2"
+    "emotion": "^10.0.27",
+    "react-dropzone": "^11.0.2",
+    "video-react": "^0.14.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -29,7 +33,6 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "video.js": "^7.8.4",
     "webpack": "^4.43.0"
   }
 }
