@@ -1,7 +1,8 @@
 # split-movie-player
-<img src="https://github.com/kurooooon/split-movie-player/blob/master/icon/logo.png" width="300"/>
+<img src="/icon/logo.png" width="300"/>
 
-
+## screen shot
+<img src="/statics/images/ss.png" width="500"/>
 
 
 # Acknowledgments
