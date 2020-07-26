@@ -3,7 +3,7 @@
 logs
 **/*.backup.*
 **/*.back.*
-renderer/.next/*
+renderer/.next/
 dist
 app
 
