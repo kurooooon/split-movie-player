@@ -1,4 +1,4 @@
-import { app } from "electron";
+import { app, screen } from "electron";
 import serve from "electron-serve";
 import { createWindow } from "./helpers";
 
@@ -13,9 +13,11 @@ if (isProd) {
 (async () => {
   await app.whenReady();
 
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+  console.log(width, height);
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600,
+    width,
+    height,
   });
 
   if (isProd) {

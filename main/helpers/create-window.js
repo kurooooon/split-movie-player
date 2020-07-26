@@ -63,6 +63,8 @@ export default function createWindow(windowName, options) {
 
   state = ensureVisibleOnSomeDisplay(restore());
 
+  console.log(options);
+
   win = new BrowserWindow({
     ...options,
     ...state,
