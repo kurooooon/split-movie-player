@@ -10,6 +10,14 @@ import {
 const { SeekBar, Volume } = controls;
 const { keyboardControls } = utils;
 
+const StyledPlayer = styled(VideoPlayer)`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const StyledMediaControls = styled.div`
   display: flex;
   align-items: center;
@@ -97,7 +105,7 @@ export default function Player() {
                   style={{ width: "100%", position: "relative" }}
                   onKeyDown={keyboardControls.bind(null, mediaProps)}
                 >
-                  <VideoPlayer
+                  <StyledPlayer
                     onVolumeChange={({ volume }) => {
                       if (!isNaN(volume)) {
                         localStorage.setItem("savedVolume", Number(volume));
@@ -105,7 +113,6 @@ export default function Player() {
                     }}
                     defaultVolume={savedVolume}
                     tabIndex="0"
-                    style={{ width: "100%", height: "100%" }}
                     src={blobUrl}
                   />
                   <StyledMediaControls>
