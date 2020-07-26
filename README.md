@@ -8,4 +8,5 @@
 # Acknowledgments
 - [nextron](https://github.com/saltyshiomix/nextron)
 - [react-media-player](https://github.com/souporserious/react-media-player)
-- [sample movies](https://www.home-movie.biz/free_movie.html)
+- [HYBRID CREATIVE MOVIE sakura (sample movies)](https://www.home-movie.biz/free_movie.html)
+- [hatchful (logo maker)](https://hatchful.shopify.com/ja)
