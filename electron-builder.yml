@@ -1,4 +1,4 @@
-appId: com.example.nextron
+appId: com.kurooooon.split-movie-player
 productName: split-movie-player
 copyright: Copyright © 2020 kurooooon
 directories:
@@ -10,3 +10,5 @@ files:
       - package.json
       - app
 publish: null
+mac:
+  icon: "./icon/logo.png"
