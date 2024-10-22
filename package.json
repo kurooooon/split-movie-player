@@ -20,7 +20,7 @@
     "react-media-player": "^0.7.9"
   },
   "devDependencies": {
-    "@babel/core": "7.10.5",
+    "@babel/core": "7.25.9",
     "babel-loader": "8.1.0",
     "electron": "9.1.1",
     "electron-builder": "22.7.0",
